@@ -4,7 +4,6 @@ require('dotenv').config();
 const cors = require('cors'); 
 const app = express();
 const port = 4000;
-const axios = require('axios');
 
 
 const apiRoutes = require('./routes/apiRoutes');
