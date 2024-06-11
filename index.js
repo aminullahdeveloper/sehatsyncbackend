@@ -10,7 +10,7 @@ const apiRoutes = require('./routes/apiRoutes');
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use('/api', apiRoutes);
-
+app.get('/', (req, res) => res.send("My Api is running"));
 
 
 app.listen(port, () => {
