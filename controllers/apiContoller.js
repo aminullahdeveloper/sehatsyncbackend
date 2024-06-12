@@ -12,7 +12,7 @@ exports.generateHealthStatus = async (req, res) => {
     const openaiResponse = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
-        model: 'gpt-4',
+        model: 'gpt-4o',
         messages: [
           { role: 'system', content: 'You are a helpful assistant.' },
           { role: 'user', content: `Based on the following lab reports and prescription summaries, provide a current health status in 100 words: ${text}` },
@@ -41,10 +41,10 @@ exports.summarizeLab = async (req, res) => {
     const openaiResponse = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
-        model: 'gpt-4',
+        model: 'gpt-4o',
         messages: [
           { role: 'system', content: 'You are a helpful assistant.' },
-          { role: 'user', content: `Summarize the following medical laboratory report in 50 understandable words as I am a patient and also ignore any irrelevant information provided by me: ${text}` },
+          { role: 'user', content: `Summarize the following medical info in 50 understandable words as I am a patient and also ignore any irrelevant information provided by me: ${text}` },
         ],
       },
       {
@@ -69,7 +69,7 @@ exports.summarizePresc = async (req, res) => {
     const openaiResponse = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
-        model: 'gpt-4',
+        model: 'gpt-4o',
         messages: [
           { role: 'system', content: 'You are a helpful assistant.' },
           { role: 'user', content: `Summarize the following prescription in 50 words because i am a patient and i dont know what is the use for the prescription given to me: ${presc}` },
@@ -123,7 +123,7 @@ exports.performOCR = async (req, res) => {
         const openaiResponse = await axios.post(
           'https://api.openai.com/v1/chat/completions',
           {
-            model: 'gpt-4',
+            model: 'gpt-4o',
             messages: [
               { role: 'system', content: 'You are a helpful assistant.' },
               { role: 'user', content: `I am a patient and this is my medical Laboratory report. I am not a doctor. Please give me a summary in 50 simple and understandable words for me and ignore any invalid information that does not correspond to lab data if it exists in my input and don't mention the heading Summary:\n\n${text}` },
