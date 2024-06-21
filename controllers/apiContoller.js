@@ -64,7 +64,7 @@ exports.summarizeLab = async (req, res) => {
         model: 'gpt-4o',
         messages: [
           { role: 'system', content: 'You are a helpful assistant.' },
-          { role: 'user', content: `Summarize the following medical info in 50 understandable words as I am a patient and also ignore any irrelevant information provided by me: ${text}` },
+          { role: 'user', content: `Summarize the following medical info in 50 understandable words as I am a patient  and also consider the date with each info while making the response and also ignore any irrelevant information provided by me: ${text}` },
         ],
       },
       {
@@ -83,7 +83,7 @@ exports.summarizeLab = async (req, res) => {
         model: 'gpt-4o',
         messages: [
           { role: 'system', content: 'You are a helpful assistant.' },
-          { role: 'user', content: `Summarize the following medical info in 50 understandable words as I am a patient and also ignore any irrelevant information provided by me and respond in urdu : ${text}` },
+          { role: 'user', content: `Summarize the following medical info in 50 understandable words as I am a patient and also consider the date with each info while making the response and also ignore any irrelevant information provided by me and respond in urdu : ${text}` },
         ],
       },
       {
