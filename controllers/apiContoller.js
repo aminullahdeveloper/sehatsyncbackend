@@ -386,7 +386,7 @@ exports.analyzeSymptoms = async (req, res) => {
     const openaiResponse = await axios.post(
       "https://api.openai.com/v1/chat/completions",
       {
-        model: "gpt-4",
+        model: "gpt-4o",
         messages: [
           { role: "system", content: "You are a helpful assistant." },
           {
@@ -402,7 +402,7 @@ exports.analyzeSymptoms = async (req, res) => {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
       }
     );
@@ -433,7 +433,7 @@ exports.openaiDiagnose = async (req, res) => {
     const openaiResponse = await axios.post(
       "https://api.openai.com/v1/chat/completions",
       {
-        model: "gpt-4",
+        model: "gpt-4o",
         messages: [
           { role: "system", content: "You are a helpful assistant." },
           { role: "user", content: prompt },
@@ -443,7 +443,7 @@ exports.openaiDiagnose = async (req, res) => {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
       }
     );
@@ -475,7 +475,7 @@ exports.openaiWorkups = async (req, res) => {
     const openaiResponse = await axios.post(
       "https://api.openai.com/v1/chat/completions",
       {
-        model: "gpt-4",
+        model: "gpt-4o",
         messages: [
           { role: "system", content: "You are a helpful assistant." },
           { role: "user", content: prompt },
@@ -485,7 +485,7 @@ exports.openaiWorkups = async (req, res) => {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
       }
     );
