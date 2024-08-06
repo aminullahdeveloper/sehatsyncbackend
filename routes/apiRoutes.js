@@ -4,7 +4,7 @@ const apiController = require('../controllers/apiContoller');
 
 router.post('/healthstatus', apiController.generateHealthStatus);
 router.post('/summarize', apiController.summarizeLab);
-router.post('/summarizeRadiology', apiController.summarizeRad);
+router.post('/summarizeRadiology', apiController.summarizeLab);
 router.post('/summarizePrescription', apiController.summarizePresc);
 router.post('/ocr', apiController.performOCR);
 router.post('/ocrRad', apiController.performOCRRad);
